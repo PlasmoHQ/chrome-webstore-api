@@ -8,6 +8,7 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "strict": false,
+    "declaration": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
