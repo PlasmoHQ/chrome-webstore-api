@@ -1,9 +1,8 @@
 {
-  "name": "quick-ts-template",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@plasmo-corp/cwu",
+  "version": "0.5.0",
+  "description": "Chrome webstore upload library, soft-fork of https://github.com/fregante/chrome-webstore-upload",
   "main": "./dist/index.js",
-  "bin": "./dist/index.js",
   "files": [
     "dist"
   ],
@@ -14,8 +13,7 @@
     "build": "tsc"
   },
   "author": "Plasmo Corp. <support@plasmo.com>",
-  "license": "ISC",
-  "dependencies": {},
+  "license": "MIT",
   "devDependencies": {
     "@swc/core": "1.2.142",
     "@swc/helpers": "0.3.3",
@@ -26,5 +24,8 @@
     "ts-node": "10.5.0",
     "ts-node-dev": "1.1.8",
     "typescript": "4.5.5"
+  },
+  "dependencies": {
+    "got": "11.8.3"
   }
 }
