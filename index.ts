@@ -47,7 +47,10 @@ class APIClient {
         headers: this._headers(await token),
         body: readStream
       })
-      .json()
+      .json<{
+        uploadState: string
+        itemError: Array<Record<string, string>>
+      }>()
   }
 
   async publish(target = "default", token = this.fetchToken()) {
