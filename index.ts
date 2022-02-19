@@ -19,7 +19,7 @@ type Options = {
 }
 
 class APIClient {
-  options: Options
+  options = {} as Options
 
   constructor(options: Options) {
     for (const field of requiredFields) {
