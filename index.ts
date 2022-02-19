@@ -1,3 +1,4 @@
+import type { ReadStream } from "fs"
 import got from "got"
 
 const rootURI = "https://www.googleapis.com"
@@ -17,6 +18,10 @@ type Options = {
   refreshToken: string
   clientSecret?: string
 }
+
+type PublishTarget = "default" | "trustedTesters"
+
+type GetProjection = "DRAFT" | "PUBLISHED"
 
 class APIClient {
   options = {} as Options
@@ -38,7 +43,10 @@ class APIClient {
     }
   }
 
-  async uploadExisting(readStream, token = this.fetchToken()) {
+  async uploadExisting({
+    readStream = null as ReadStream,
+    token = this.fetchToken()
+  }) {
     if (!readStream) {
       throw new Error("Read stream missing")
     }
@@ -56,7 +64,10 @@ class APIClient {
       }>()
   }
 
-  async publish(target = "default", token = this.fetchToken()) {
+  async publish({
+    target = "default" as PublishTarget,
+    token = this.fetchToken()
+  }) {
     const { extensionId } = this.options
 
     return got
@@ -66,7 +77,10 @@ class APIClient {
       .json()
   }
 
-  async get(projection = "DRAFT", token = this.fetchToken()) {
+  async get({
+    projection = "DRAFT" as GetProjection,
+    token = this.fetchToken()
+  }) {
     const { extensionId } = this.options
 
     return got
@@ -95,7 +109,7 @@ class APIClient {
     return response.access_token
   }
 
-  _headers(token) {
+  _headers(token: string) {
     return {
       Authorization: `Bearer ${token}`,
       "x-goog-api-version": "2"
