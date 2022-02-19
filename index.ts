@@ -43,10 +43,7 @@ class APIClient {
     }
   }
 
-  async uploadExisting({
-    readStream = null as ReadStream,
-    token = this.fetchToken()
-  }) {
+  async uploadExisting({ readStream = null as ReadStream, token = "" }) {
     if (!readStream) {
       throw new Error("Read stream missing")
     }
@@ -55,7 +52,7 @@ class APIClient {
 
     return got
       .put(uploadExistingURI(extensionId), {
-        headers: this._headers(await token),
+        headers: this._headers(token || (await this.fetchToken())),
         body: readStream
       })
       .json<{
@@ -64,15 +61,12 @@ class APIClient {
       }>()
   }
 
-  async publish({
-    target = "default" as PublishTarget,
-    token = this.fetchToken()
-  }) {
+  async publish({ target = "default" as PublishTarget, token = "" }) {
     const { extensionId } = this.options
 
     return got
       .post(publishURI(extensionId, target), {
-        headers: this._headers(await token)
+        headers: this._headers(token || (await this.fetchToken()))
       })
       .json()
   }
