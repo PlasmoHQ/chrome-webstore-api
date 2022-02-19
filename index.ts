@@ -30,7 +30,7 @@ class APIClient {
       this.options[field] = options[field]
     }
 
-    if ("clientSecret" in options) {
+    if (typeof options.clientSecret === "string") {
       this.options.clientSecret = options.clientSecret
     }
   }
