@@ -12,16 +12,16 @@ const getURI = (id: string, projection: string) =>
 
 const requiredFields = ["extensionId", "clientId", "refreshToken"]
 
-type Options = {
-  extensionId: string
+export type Options = {
+  extId: string
   clientId: string
   refreshToken: string
   clientSecret?: string
 }
 
-type PublishTarget = "default" | "trustedTesters"
+export type PublishTarget = "default" | "trustedTesters"
 
-type GetProjection = "DRAFT" | "PUBLISHED"
+export type GetProjection = "DRAFT" | "PUBLISHED"
 
 class APIClient {
   options = {} as Options
@@ -48,7 +48,7 @@ class APIClient {
       throw new Error("Read stream missing")
     }
 
-    const { extensionId } = this.options
+    const { extId: extensionId } = this.options
 
     return got
       .put(uploadExistingURI(extensionId), {
@@ -62,7 +62,7 @@ class APIClient {
   }
 
   async publish({ target = "default" as PublishTarget, token = "" }) {
-    const { extensionId } = this.options
+    const { extId: extensionId } = this.options
 
     return got
       .post(publishURI(extensionId, target), {
@@ -75,7 +75,7 @@ class APIClient {
     projection = "DRAFT" as GetProjection,
     token = this.fetchToken()
   }) {
-    const { extensionId } = this.options
+    const { extId: extensionId } = this.options
 
     return got
       .get(getURI(extensionId, projection), {
