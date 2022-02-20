@@ -1,6 +1,6 @@
 {
   "name": "@plasmo-corp/cwu",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "Chrome webstore upload library, soft-fork of https://github.com/fregante/chrome-webstore-upload",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -11,7 +11,8 @@
     "dev": "ts-node-dev --respawn --transpile-only index.ts",
     "start": "ts-node --transpile-only index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc --build"
+    "build": "tsc --build",
+    "prepare": "pnpm run build"
   },
   "author": "Plasmo Corp. <support@plasmo.com>",
   "license": "MIT",

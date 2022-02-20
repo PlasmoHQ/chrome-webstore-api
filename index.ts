@@ -16,14 +16,13 @@ export type Options = {
   extId: string
   clientId: string
   refreshToken: string
-  clientSecret?: string
 }
 
 export type PublishTarget = "default" | "trustedTesters"
 
 export type GetProjection = "DRAFT" | "PUBLISHED"
 
-class APIClient {
+export class ChromeWebstoreClient {
   options = {} as Options
 
   constructor(options: Options) {
@@ -33,13 +32,6 @@ class APIClient {
       }
 
       this.options[field] = options[field]
-    }
-
-    if (
-      typeof options.clientSecret === "string" &&
-      options.clientSecret.length > 0
-    ) {
-      this.options.clientSecret = options.clientSecret
     }
   }
 
@@ -71,30 +63,23 @@ class APIClient {
       .json()
   }
 
-  async get({
-    projection = "DRAFT" as GetProjection,
-    token = this.fetchToken()
-  }) {
+  async get({ projection = "DRAFT" as GetProjection, token = "" }) {
     const { extId: extensionId } = this.options
 
     return got
       .get(getURI(extensionId, projection), {
-        headers: this._headers(await token)
+        headers: this._headers(token || (await this.fetchToken()))
       })
       .json()
   }
 
   async fetchToken() {
-    const { clientId, clientSecret, refreshToken } = this.options
+    const { clientId, refreshToken } = this.options
     const json = {
       client_id: clientId,
       refresh_token: refreshToken,
       grant_type: "refresh_token"
     } as Record<string, string>
-
-    if (clientSecret) {
-      json.client_secret = clientSecret
-    }
 
     const response = await got.post(refreshTokenURI, { json }).json<{
       access_token: string
@@ -109,8 +94,4 @@ class APIClient {
       "x-goog-api-version": "2"
     }
   }
-}
-
-export function chromeWebstoreUpload(opt: Options) {
-  return new APIClient(opt)
 }
