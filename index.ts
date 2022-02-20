@@ -1,4 +1,4 @@
-import type { ReadStream } from "fs"
+import { createReadStream, ReadStream } from "fs"
 import got from "got"
 
 const rootURI = "https://www.googleapis.com"
@@ -22,6 +22,8 @@ export type PublishTarget = "default" | "trustedTesters"
 
 export type GetProjection = "DRAFT" | "PUBLISHED"
 
+export type UploadState = "FAILURE" | "IN_PROGRESS" | "NOT_FOUND" | "SUCCESS"
+
 export class ChromeWebstoreClient {
   options = {} as Options
 
@@ -35,7 +37,27 @@ export class ChromeWebstoreClient {
     }
   }
 
-  async uploadExisting({ readStream = null as ReadStream, token = "" }) {
+  async submit({ filePath = "", target = "default" as PublishTarget }) {
+    const token = await this.fetchToken()
+
+    const { uploadState, itemError } = await this.upload({
+      readStream: createReadStream(filePath),
+      token
+    })
+
+    if (uploadState === "FAILURE" || uploadState === "NOT_FOUND") {
+      throw new Error(
+        itemError.map(({ error_detail }) => error_detail).join("\n")
+      )
+    }
+
+    return this.publish({
+      target,
+      token
+    })
+  }
+
+  async upload({ readStream = null as ReadStream, token = "" }) {
     if (!readStream) {
       throw new Error("Read stream missing")
     }
@@ -48,7 +70,7 @@ export class ChromeWebstoreClient {
         body: readStream
       })
       .json<{
-        uploadState: string
+        uploadState: UploadState
         itemError: Array<Record<string, string>>
       }>()
   }

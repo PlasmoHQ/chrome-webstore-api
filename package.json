@@ -1,6 +1,6 @@
 {
   "name": "@plasmo-corp/cwu",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Chrome webstore upload library, soft-fork of https://github.com/fregante/chrome-webstore-upload",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
