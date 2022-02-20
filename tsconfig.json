@@ -2,9 +2,6 @@
   "compilerOptions": {
     "outDir": "dist",
     "baseUrl": ".",
-    "paths": {
-      "~*": ["./*"]
-    },
     "resolveJsonModule": true,
     "sourceMap": true,
     "strict": false,

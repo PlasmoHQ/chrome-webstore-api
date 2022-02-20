@@ -1,4 +1,4 @@
-import { createReadStream, ReadStream } from "fs"
+import { ReadStream, createReadStream } from "fs"
 import got from "got"
 
 const rootURI = "https://www.googleapis.com"
@@ -9,8 +9,6 @@ const publishURI = (id: string, target: string) =>
   `${rootURI}/chromewebstore/v1.1/items/${id}/publish?publishTarget=${target}`
 const getURI = (id: string, projection: string) =>
   `${rootURI}/chromewebstore/v1.1/items/${id}?projection=${projection}`
-
-const requiredFields = ["extensionId", "clientId", "refreshToken"]
 
 export type Options = {
   extId: string
@@ -24,13 +22,24 @@ export type GetProjection = "DRAFT" | "PUBLISHED"
 
 export type UploadState = "FAILURE" | "IN_PROGRESS" | "NOT_FOUND" | "SUCCESS"
 
+export const errorMap = {
+  extId:
+    "No extension ID provided, e.g. https://chrome.google.com/webstore/detail/EXT_ID",
+  clientId:
+    "To get one: https://github.com/fregante/chrome-webstore-upload/blob/main/How%20to%20generate%20Google%20API%20keys.md",
+  refreshToken:
+    "No refresh token provided. To get one: https://github.com/fregante/chrome-webstore-upload/blob/main/How%20to%20generate%20Google%20API%20keys.md"
+}
+
+export const requiredFields = Object.keys(errorMap)
+
 export class ChromeWebstoreClient {
   options = {} as Options
 
   constructor(options: Options) {
     for (const field of requiredFields) {
       if (!options[field]) {
-        throw new Error(`Option "${field}" is required`)
+        throw new Error(errorMap[field])
       }
 
       this.options[field] = options[field]
@@ -62,10 +71,8 @@ export class ChromeWebstoreClient {
       throw new Error("Read stream missing")
     }
 
-    const { extId: extensionId } = this.options
-
     return got
-      .put(uploadExistingURI(extensionId), {
+      .put(uploadExistingURI(this.options.extId), {
         headers: this._headers(token || (await this.fetchToken())),
         body: readStream
       })
@@ -76,20 +83,16 @@ export class ChromeWebstoreClient {
   }
 
   async publish({ target = "default" as PublishTarget, token = "" }) {
-    const { extId: extensionId } = this.options
-
     return got
-      .post(publishURI(extensionId, target), {
+      .post(publishURI(this.options.extId, target), {
         headers: this._headers(token || (await this.fetchToken()))
       })
       .json()
   }
 
   async get({ projection = "DRAFT" as GetProjection, token = "" }) {
-    const { extId: extensionId } = this.options
-
     return got
-      .get(getURI(extensionId, projection), {
+      .get(getURI(this.options.extId, projection), {
         headers: this._headers(token || (await this.fetchToken()))
       })
       .json()
