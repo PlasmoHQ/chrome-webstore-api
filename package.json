@@ -1,6 +1,6 @@
 {
   "name": "@plasmo-corp/cwu",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "Chrome webstore upload library",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -15,6 +15,10 @@
     "prepare": "run-s clean build"
   },
   "author": "Plasmo Corp. <support@plasmo.com>",
+  "repository": {
+    "type": "git",
+    "url": "github:plasmo-corp/cwu"
+  },
   "license": "MIT",
   "devDependencies": {
     "@plasmo-corp/rps": "1.1.0",
