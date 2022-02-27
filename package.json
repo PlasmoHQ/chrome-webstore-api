@@ -1,6 +1,6 @@
 {
   "name": "@plasmo-corp/cwu",
-  "version": "1.7.4",
+  "version": "1.8.0",
   "description": "Chrome webstore upload library",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -8,8 +8,12 @@
     "dist"
   ],
   "scripts": {
-    "dev": "esbuild index.ts --bundle --watch --platform=node --outdir=dist",
-    "build": "esbuild index.ts --bundle --minify --platform=node --outdir=dist",
+    "dev": "run-p dev:*",
+    "dev:type": "tsc -w --emitDeclarationOnly",
+    "dev:code": "esbuild index.ts --bundle --watch --platform=node --outdir=dist",
+    "build": "run-p build:*",
+    "build:type": "tsc --emitDeclarationOnly",
+    "build:code": "esbuild index.ts --bundle --minify --platform=node --outdir=dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
     "prepare": "run-s clean build"

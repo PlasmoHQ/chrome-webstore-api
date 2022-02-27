@@ -269,8 +269,8 @@ packages:
       shell-quote: 1.7.3
     dev: true
 
-  /@sindresorhus/is/4.4.0:
-    resolution: {integrity: sha512-QppPM/8l3Mawvh4rn9CNEYIU9bxpXUCRMaX9yUpvBk1nMKusLKpfXGDEKExKaPhLzcn3lzil7pR6rnJ11HgeRQ==}
+  /@sindresorhus/is/4.5.0:
+    resolution: {integrity: sha512-ZzlL5VTnHZJl8wMWEaYk/13hwMNKLylTSPZRz8+0HIwfRTQMnFgUahDNRRV+rTmPADxQZYxna/nQcStNSCccKg==}
     engines: {node: '>=10'}
     dev: false
 
@@ -360,7 +360,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001312
-      electron-to-chromium: 1.4.72
+      electron-to-chromium: 1.4.73
       escalade: 3.1.1
       node-releases: 2.0.2
       picocolors: 1.0.0
@@ -456,8 +456,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /electron-to-chromium/1.4.72:
-    resolution: {integrity: sha512-9LkRQwjW6/wnSfevR21a3k8sOJ+XWSH7kkzs9/EUenKmuDkndP3W9y1yCZpOxufwGbX3JV8glZZSDb4o95zwXQ==}
+  /electron-to-chromium/1.4.73:
+    resolution: {integrity: sha512-RlCffXkE/LliqfA5m29+dVDPB2r72y2D2egMMfIy3Le8ODrxjuZNVo4NIC2yPL01N4xb4nZQLwzi6Z5tGIGLnA==}
     dev: true
 
   /end-of-stream/1.4.4:
@@ -729,7 +729,7 @@ packages:
     resolution: {integrity: sha512-1Zhoh+lDej3t7Ks1BP/Jufn+rNqdiHQgUOcTxHzg2Dao1LQfp5S4Iq0T3iBxN4Zdo7QqCJL+WJUNzDX6rCP2Ew==}
     engines: {node: '>=14.16'}
     dependencies:
-      '@sindresorhus/is': 4.4.0
+      '@sindresorhus/is': 4.5.0
       '@szmarczak/http-timer': 5.0.1
       '@types/cacheable-request': 6.0.2
       '@types/responselike': 1.0.0
