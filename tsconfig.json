@@ -17,10 +17,5 @@
     "target": "es6",
     "allowJs": true
   },
-  "include": ["index.ts"],
-  "ts-node": {
-    "transpileOnly": true,
-    "resolveJsonModule": true,
-    "transpiler": "ts-node/transpilers/swc-experimental"
-  }
+  "include": ["index.ts"]
 }
