@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@plasmo-corp/rps': 1.1.0
+  '@plasmo-corp/rps': 1.2.1
   '@trivago/prettier-plugin-sort-imports': 3.2.0
   '@types/node': 17.0.21
   esbuild: 0.14.23
@@ -14,7 +14,7 @@ dependencies:
   got: 12.0.1
 
 devDependencies:
-  '@plasmo-corp/rps': 1.1.0
+  '@plasmo-corp/rps': 1.2.1
   '@trivago/prettier-plugin-sort-imports': 3.2.0_prettier@2.5.1
   '@types/node': 17.0.21
   esbuild: 0.14.23
@@ -258,12 +258,12 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
-  /@plasmo-corp/rps/1.1.0:
-    resolution: {integrity: sha512-+zxfvF7CgMpjbomnYAAX+l4I+891s1hvUS6EKaSrTvckpeSoZLi7BhZ8ZTeDtv+4yjujss2mPAMDNMT4QA847w==}
+  /@plasmo-corp/rps/1.2.1:
+    resolution: {integrity: sha512-dIX+3ffeeCNyuM2iGxv14EiodsbGOCZECcPruUf+GPEqCvQ/lH+ecCu83x20PHaDFCxZU0tgDxMzMpUSbS2axw==}
     hasBin: true
     dependencies:
       cross-spawn: 7.0.3
-      minimatch: 5.0.0
+      minimatch: 5.0.1
       pidtree: 0.5.0
       read-pkg: 7.1.0
       shell-quote: 1.7.3
@@ -877,8 +877,8 @@ packages:
       brace-expansion: 1.1.11
     dev: true
 
-  /minimatch/5.0.0:
-    resolution: {integrity: sha512-EU+GCVjXD00yOUf1TwAHVP7v3fBD3A8RkkPYsWWKGWesxM/572sL53wJQnHxquHlRhYUV36wHkqrN8cdikKc2g==}
+  /minimatch/5.0.1:
+    resolution: {integrity: sha512-nLDxIFRyhDblz3qMuq+SoRZED4+miJ/G+tdDrjkkkRnjAsBexeGpgjLEQ0blJy7rHhR2b93rhQY4SvyWu9v03g==}
     engines: {node: '>=10'}
     dependencies:
       brace-expansion: 2.0.1
