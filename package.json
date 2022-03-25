@@ -1,14 +1,16 @@
 {
   "name": "@plasmo-corp/cwu",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Chrome webstore upload library",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
+  "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=16.14"
+  },
   "scripts": {
     "dev": "tsup index.ts --format esm --watch --sourcemap inline",
     "build": "tsup index.ts --format esm --dts-resolve",
