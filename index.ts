@@ -2,7 +2,7 @@ import { ReadStream, createReadStream } from "fs"
 import got from "got"
 
 const rootURI = "https://www.googleapis.com"
-const refreshTokenURI = "https://www.googleapis.com/oauth2/v4/token"
+const refreshTokenURI = `${rootURI}/oauth2/v4/token`
 const uploadExistingURI = (id: string) =>
   `${rootURI}/upload/chromewebstore/v1.1/items/${id}`
 const publishURI = (id: string, target: string) =>
