@@ -13,8 +13,8 @@
     "noImplicitAny": false,
     "moduleResolution": "node",
     "isolatedModules": true,
-    "module": "commonjs",
-    "target": "es6",
+    "module": "ES2022",
+    "target": "ES2022",
     "allowJs": true
   },
   "include": ["index.ts"]

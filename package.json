@@ -9,8 +9,8 @@
     "dist"
   ],
   "scripts": {
-    "dev": "tsup src/index.ts --format esm --watch --sourcemap inline",
-    "build": "tsup src/index.ts --format esm --dts-resolve",
+    "dev": "tsup index.ts --format esm --watch --sourcemap inline",
+    "build": "tsup index.ts --format esm --dts-resolve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
     "prepublishOnly": "run-s clean build"
