@@ -5,8 +5,8 @@ This module is a hard fork of [fregante/chrome-webstore-upload/](https://github.
 Feature includes:
 
 - TypeScript, with type exports
+- ESM (if you need cjs, file an issue)
 - Frozen dependencies, updated via renovatebot
-- Compiled down to CJS (for non-ESM bundling process)
 
 ## Usage
 
