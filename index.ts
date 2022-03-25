@@ -1,14 +1,8 @@
 import { ReadStream, createReadStream } from "fs"
 import got from "got"
 
-const rootURI = "https://www.googleapis.com"
-const refreshTokenURI = `${rootURI}/oauth2/v4/token`
-const uploadExistingURI = (id: string) =>
-  `${rootURI}/upload/chromewebstore/v1.1/items/${id}`
-const publishURI = (id: string, target: string) =>
-  `${rootURI}/chromewebstore/v1.1/items/${id}/publish?publishTarget=${target}`
-const getURI = (id: string, projection: string) =>
-  `${rootURI}/chromewebstore/v1.1/items/${id}?projection=${projection}`
+const baseApiUrl = "https://www.googleapis.com"
+const refreshTokenURI = `${baseApiUrl}/oauth2/v4/token`
 
 export type Options = {
   extId: string
@@ -46,13 +40,27 @@ export class ChromeWebstoreClient {
     }
   }
 
-  async submit({ filePath = "", target = "default" as PublishTarget }) {
-    const token = await this.fetchToken()
+  get uploadEndpoint() {
+    return `${baseApiUrl}/upload/chromewebstore/v1.1/items/${this.options.extId}`
+  }
 
-    const { uploadState, itemError } = await this.upload({
-      readStream: createReadStream(filePath),
-      token
-    })
+  getPublishEndpoint(target: PublishTarget) {
+    return `${baseApiUrl}/chromewebstore/v1.1/items/${this.options.extId}/publish?publishTarget=${target}`
+  }
+
+  getInfoEndpoint(projection: string) {
+    return `${baseApiUrl}/chromewebstore/v1.1/items/${this.options.extId}?projection=${projection}`
+  }
+
+  async submit({ filePath = "", target = "default" as PublishTarget }) {
+    const accessToken = await this.getAccessToken()
+
+    const { uploadState, itemError } = await this.upload(
+      {
+        readStream: createReadStream(filePath)
+      },
+      accessToken
+    )
 
     if (uploadState === "FAILURE" || uploadState === "NOT_FOUND") {
       throw new Error(
@@ -60,21 +68,26 @@ export class ChromeWebstoreClient {
       )
     }
 
-    return this.publish({
-      target,
-      token
-    })
+    return this.publish(
+      {
+        target
+      },
+      accessToken
+    )
   }
 
-  async upload({ readStream = null as ReadStream, token = "" }) {
+  async upload({ readStream = null as ReadStream }, _accessToken = "") {
     if (!readStream) {
       throw new Error("Read stream missing")
     }
 
+    const accessToken = _accessToken || (await this.getAccessToken())
+
     return got
-      .put(uploadExistingURI(this.options.extId), {
-        headers: this._headers(token || (await this.fetchToken())),
-        body: readStream
+      .put(this.uploadEndpoint, {
+        headers: this.getHeaders(accessToken),
+        body: readStream,
+        throwHttpErrors: false
       })
       .json<{
         uploadState: UploadState
@@ -82,38 +95,43 @@ export class ChromeWebstoreClient {
       }>()
   }
 
-  async publish({ target = "default" as PublishTarget, token = "" }) {
+  async publish({ target = "default" as PublishTarget }, _accessToken = "") {
+    const accessToken = _accessToken || (await this.getAccessToken())
+
     return got
-      .post(publishURI(this.options.extId, target), {
-        headers: this._headers(token || (await this.fetchToken()))
+      .post(this.getPublishEndpoint(target), {
+        headers: this.getHeaders(accessToken)
       })
       .json()
   }
 
-  async get({ projection = "DRAFT" as GetProjection, token = "" }) {
+  async get({ projection = "DRAFT" as GetProjection }, _accessToken = "") {
+    const accessToken = _accessToken || (await this.getAccessToken())
+
     return got
-      .get(getURI(this.options.extId, projection), {
-        headers: this._headers(token || (await this.fetchToken()))
+      .get(this.getInfoEndpoint(projection), {
+        headers: this.getHeaders(accessToken)
       })
       .json()
   }
 
-  async fetchToken() {
-    const { clientId, refreshToken } = this.options
-    const json = {
-      client_id: clientId,
-      refresh_token: refreshToken,
-      grant_type: "refresh_token"
-    } as Record<string, string>
-
-    const response = await got.post(refreshTokenURI, { json }).json<{
-      access_token: string
-    }>()
+  async getAccessToken() {
+    const response = await got
+      .post(refreshTokenURI, {
+        json: {
+          client_id: this.options.clientId,
+          refresh_token: this.options.refreshToken,
+          grant_type: "refresh_token"
+        }
+      })
+      .json<{
+        access_token: string
+      }>()
 
     return response.access_token
   }
 
-  _headers(token: string) {
+  getHeaders(token: string) {
     return {
       Authorization: `Bearer ${token}`,
       "x-goog-api-version": "2"
