@@ -7,7 +7,7 @@ specifiers:
   got: 12.0.2
   prettier: 2.6.1
   rimraf: 3.0.2
-  tsup: 5.12.1
+  tsup: 5.12.5
   typescript: 4.6.3
 
 dependencies:
@@ -19,7 +19,7 @@ devDependencies:
   '@types/node': 17.0.23
   prettier: 2.6.1
   rimraf: 3.0.2
-  tsup: 5.12.1_typescript@4.6.3
+  tsup: 5.12.5_typescript@4.6.3
   typescript: 4.6.3
 
 packages:
@@ -1472,8 +1472,8 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
-  /tsup/5.12.1_typescript@4.6.3:
-    resolution: {integrity: sha512-vI7E4T6+6n5guQ9UKUOkQmzd1n4V9abGK71lbnzJMLJspbkNby5zlwWvgvHafLdYCb1WXpjFuqqmNLjBA0Wz3g==}
+  /tsup/5.12.5_typescript@4.6.3:
+    resolution: {integrity: sha512-lKwzJsB49sDto51QjqOB4SdiBLKRvgTymEBuBCovcksdDwFEz3esrkbf3m497PXntUKVTzcgOfPdTgknMtvufw==}
     hasBin: true
     peerDependencies:
       typescript: ^4.1.0
