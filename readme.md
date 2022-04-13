@@ -28,6 +28,10 @@ await client.submit({
 })
 ```
 
+# Support
+
+Join the [Discord channel](https://discord.browser.market)!
+
 # Acknowledgment
 
 - [fregante/chrome-webstore-upload/](https://github.com/fregante/chrome-webstore-upload/)
