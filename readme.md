@@ -6,9 +6,11 @@ Feature includes:
 
 - TypeScript, with type exports
 - ESM (if you need cjs, file an issue)
-- Frozen dependencies, updated via renovatebot
+- Pinned dependencies, updated via renovatebot
 
 ## Usage
+
+To obtain `clientId` and `refreshToken`, see: [token](./token.md)
 
 ## nodejs API
 
