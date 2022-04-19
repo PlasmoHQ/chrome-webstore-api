@@ -1,21 +1,21 @@
-# Chrome Webstore Upload
+# Chrome Webstore API for nodejs
 
-This module is a hard fork of [fregante/chrome-webstore-upload/](https://github.com/fregante/chrome-webstore-upload/) to upload an extension archive to the chrome webstore.
+A nodejs library from [plasmo](https://www.plasmo.com/) to submit browser extension to the [Chrome Webstore](https://chrome.google.com/webstore/category/extensions/).
 
 Feature includes:
 
 - TypeScript, with type exports
-- ESM (if you need cjs, file an issue)
+- ESM (if you need cjs, please use dynamic import)
 - Pinned dependencies, updated via renovatebot
 
 ## Usage
 
-To obtain `clientId` and `refreshToken`, see: [token](./token.md)
+To obtain `clientId` and `refreshToken`, see: [token guide](https://github.com/plasmo-corp/chrome-webstore-api/blob/main/token.md)
 
-## nodejs API
+### nodejs API
 
 ```ts
-import { ChromeWebstoreClient } from "@plasmo-corp/cwu"
+import { ChromeWebstoreClient } from "chrome-webstore-api"
 
 const client = new ChromeWebstoreClient({
   extId,
@@ -36,7 +36,7 @@ Join the [Discord channel](https://discord.browser.market)!
 
 # Acknowledgment
 
-- [fregante/chrome-webstore-upload/](https://github.com/fregante/chrome-webstore-upload/)
+- This library is inspired by, and was a rewrite/hard-fork of [fregante/chrome-webstore-upload/](https://github.com/fregante/chrome-webstore-upload/)
 
 # License
 

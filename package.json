@@ -1,7 +1,7 @@
 {
-  "name": "@plasmo-corp/cwu",
-  "version": "2.3.0",
-  "description": "Chrome webstore upload library",
+  "name": "chrome-webstore-api",
+  "version": "2.4.0",
+  "description": "Chrome webstore API",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
@@ -18,10 +18,10 @@
     "clean": "rimraf dist",
     "prepublishOnly": "run-s clean build"
   },
-  "author": "Plasmo Corp. <support@plasmo.com>",
+  "author": "Plasmo Corp. <foss@plasmo.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/plasmo-corp/cwu.git"
+    "url": "https://github.com/plasmo-corp/chrome-webstore-api.git"
   },
   "keywords": [
     "browser-extensions",
@@ -33,7 +33,7 @@
   "devDependencies": {
     "@plasmo-corp/rps": "1.2.1",
     "@trivago/prettier-plugin-sort-imports": "3.2.0",
-    "@types/node": "17.0.23",
+    "@types/node": "17.0.25",
     "prettier": "2.6.2",
     "rimraf": "3.0.2",
     "tsup": "5.12.5",
