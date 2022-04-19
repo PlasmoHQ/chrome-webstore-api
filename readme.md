@@ -15,7 +15,7 @@ To obtain `clientId` and `refreshToken`, see: [token guide](https://github.com/p
 ### nodejs API
 
 ```ts
-import { ChromeWebstoreClient } from "chrome-webstore-api"
+import { ChromeWebstoreClient } from "@plasmo-corp/cwu"
 
 const client = new ChromeWebstoreClient({
   extId,
@@ -40,4 +40,4 @@ Join the [Discord channel](https://discord.browser.market)!
 
 # License
 
-[MIT](./license) 🚀 [Plasmo Corp.](https://plasmo.com)
+[MIT](./license) 🚀 [Plasmo](https://plasmo.com)
