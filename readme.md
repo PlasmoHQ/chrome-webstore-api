@@ -15,7 +15,7 @@ To obtain `clientId` and `refreshToken`, see: [token guide](https://github.com/P
 ### nodejs API
 
 ```ts
-import { ChromeWebstoreClient } from "@PlasmoHQ/cwu"
+import { ChromeWebstoreClient } from "@plasmo-corp/cwu"
 
 const client = new ChromeWebstoreClient({
   extId,
