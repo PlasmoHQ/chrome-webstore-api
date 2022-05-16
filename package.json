@@ -1,5 +1,5 @@
 {
-  "name": "@plasmo-corp/cwu",
+  "name": "@plasmohq/cwu",
   "version": "2.4.0",
   "description": "Chrome webstore API",
   "exports": "./dist/index.js",
