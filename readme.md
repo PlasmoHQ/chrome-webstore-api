@@ -9,7 +9,7 @@
     <img alt="See License" src="https://img.shields.io/npm/l/@plasmohq/chrome-webstore-api"/>
   </a>
   <a aria-label="NPM" href="https://www.npmjs.com/package/@plasmohq/chrome-webstore-api">
-    <img alt="NPM Install" src="https://img.shields.io/npm/v/plasmohq/chrome-webstore-api?logo=npm"/>
+    <img alt="NPM Install" src="https://img.shields.io/npm/v/@plasmohq/chrome-webstore-api?logo=npm"/>
   </a>
   <a aria-label="Twitter" href="https://www.twitter.com/plasmohq">
     <img alt="Follow PlasmoHQ on Twitter" src="https://img.shields.io/twitter/follow/plasmohq?logo=twitter"/>
