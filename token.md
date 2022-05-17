@@ -2,7 +2,7 @@
 
 [chrome-webstore-api](https://github.com/PlasmoHQ/chrome-webstore-api) invokes the official [Chrome Web Store API](https://developer.chrome.com/docs/webstore/using_webstore_api/).
 
-_Note:_ the names you enter here don't really matter. It's an app that only you will have access to. This will take approximately 10 minutes and Google likes to change these screens often. Sorry.
+_Note:_ the names you enter here don't really matter. It's an app that only you will have access to. This will take approximately 10 minutes and Google likes to change these screens often 🤓...
 
 ## Process
 

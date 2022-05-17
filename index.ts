@@ -1,8 +1,8 @@
 import { ReadStream, createReadStream } from "fs"
 import got from "got"
 
-const baseApiUrl = "https://www.googleapis.com"
-const refreshTokenURI = `${baseApiUrl}/oauth2/v4/token`
+const baseAPIUrl = "https://www.googleapis.com"
+const refreshTokenURI = `${baseAPIUrl}/oauth2/v4/token`
 
 export type Options = {
   extId: string
@@ -27,7 +27,7 @@ export const errorMap = {
 
 export const requiredFields = Object.keys(errorMap)
 
-export class ChromeWebstoreClient {
+export class ChromeWebstoreAPI {
   options = {} as Options
 
   constructor(options: Options) {
@@ -41,15 +41,15 @@ export class ChromeWebstoreClient {
   }
 
   get uploadEndpoint() {
-    return `${baseApiUrl}/upload/chromewebstore/v1.1/items/${this.options.extId}`
+    return `${baseAPIUrl}/upload/chromewebstore/v1.1/items/${this.options.extId}`
   }
 
   getPublishEndpoint(target: PublishTarget) {
-    return `${baseApiUrl}/chromewebstore/v1.1/items/${this.options.extId}/publish?publishTarget=${target}`
+    return `${baseAPIUrl}/chromewebstore/v1.1/items/${this.options.extId}/publish?publishTarget=${target}`
   }
 
   getInfoEndpoint(projection: string) {
-    return `${baseApiUrl}/chromewebstore/v1.1/items/${this.options.extId}?projection=${projection}`
+    return `${baseAPIUrl}/chromewebstore/v1.1/items/${this.options.extId}?projection=${projection}`
   }
 
   async submit({ filePath = "", target = "default" as PublishTarget }) {

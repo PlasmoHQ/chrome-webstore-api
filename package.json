@@ -1,6 +1,6 @@
 {
-  "name": "@plasmohq/cwu",
-  "version": "2.4.2",
+  "name": "@plasmohq/chrome-webstore-api",
+  "version": "2.5.0",
   "description": "Chrome webstore API",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -21,7 +21,7 @@
   "author": "Plasmo Corp. <foss@plasmo.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/plasmohq/chrome-webstore-api.git"
+    "url": "https://github.com/PlasmoHQ/chrome-webstore-api.git"
   },
   "keywords": [
     "browser-extensions",
