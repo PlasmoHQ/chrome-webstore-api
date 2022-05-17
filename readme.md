@@ -32,7 +32,7 @@ await client.submit({
 
 # Support
 
-Join the [Discord channel](https://discord.browser.market)!
+Join the [Discord channel](https://www.plasmo.com/s/d)!
 
 # Acknowledgment
 
