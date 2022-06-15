@@ -8,7 +8,7 @@ specifiers:
   prettier: 2.6.2
   rimraf: 3.0.2
   tsup: 5.12.8
-  typescript: 4.6.4
+  typescript: 4.7.3
 
 dependencies:
   got: 12.0.4
@@ -19,8 +19,8 @@ devDependencies:
   '@types/node': 17.0.34
   prettier: 2.6.2
   rimraf: 3.0.2
-  tsup: 5.12.8_typescript@4.6.4
-  typescript: 4.6.4
+  tsup: 5.12.8_typescript@4.7.3
+  typescript: 4.7.3
 
 packages:
 
@@ -183,12 +183,16 @@ packages:
     resolution: {integrity: sha512-oG0ej7efjEXxb4UgE+klVx+3j4MVo+A2vCzm7OUN4CLo6WhQ+vSOD2yJ8m7B+DghObxtLxt3EfgMWpq+AsWehQ==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+    dependencies:
+      '@babel/types': 7.17.12
     dev: true
 
   /@babel/parser/7.17.12:
     resolution: {integrity: sha512-FLzHmN9V3AJIrWfOpvRlZCeVg/WLdicSnTMsLur6uDj9TT8ymUlG9XxURdW/XvuygK+2CW0poOJABdA4m/YKxA==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+    dependencies:
+      '@babel/types': 7.17.12
     dev: true
 
   /@babel/template/7.16.7:
@@ -1527,7 +1531,7 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
-  /tsup/5.12.8_typescript@4.6.4:
+  /tsup/5.12.8_typescript@4.7.3:
     resolution: {integrity: sha512-fSBzUBtrnAQ+XKPfj1KcZ2Pl0EUlKBqpbTmRAs+2mL34fQlowrm6ccQgOYyMe9MMAcejMP6/7Rw3qKjx1lreZA==}
     hasBin: true
     peerDependencies:
@@ -1550,7 +1554,7 @@ packages:
       source-map: 0.8.0-beta.0
       sucrase: 3.21.0
       tree-kill: 1.2.2
-      typescript: 4.6.4
+      typescript: 4.7.3
     transitivePeerDependencies:
       - postcss
       - supports-color
@@ -1562,8 +1566,8 @@ packages:
     engines: {node: '>=12.20'}
     dev: true
 
-  /typescript/4.6.4:
-    resolution: {integrity: sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==}
+  /typescript/4.7.3:
+    resolution: {integrity: sha512-WOkT3XYvrpXx4vMMqlD+8R8R37fZkjyLGlxavMc4iB8lrl8L0DeTcHbYgw/v0N/z9wAFsgBhcsF0ruoySS22mA==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
