@@ -1,4 +1,4 @@
-import { ReadStream, createReadStream } from "fs"
+import { createReadStream, ReadStream } from "fs"
 import got from "got"
 
 const baseAPIUrl = "https://www.googleapis.com"
@@ -20,9 +20,9 @@ export const errorMap = {
   extId:
     "No extension ID provided, e.g. https://chrome.google.com/webstore/detail/EXT_ID",
   clientId:
-    "To get one: https://github.com/fregante/chrome-webstore-upload/blob/main/How%20to%20generate%20Google%20API%20keys.md",
+    "To get one: https://github.com/PlasmoHQ/chrome-webstore-api/blob/main/token.md",
   refreshToken:
-    "No refresh token provided. To get one: https://github.com/fregante/chrome-webstore-upload/blob/main/How%20to%20generate%20Google%20API%20keys.md"
+    "No refresh token provided. To get one: https://github.com/PlasmoHQ/chrome-webstore-api/blob/main/token.md"
 }
 
 export const requiredFields = Object.keys(errorMap)
