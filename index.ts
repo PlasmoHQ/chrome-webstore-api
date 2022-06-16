@@ -8,6 +8,7 @@ export type Options = {
   extId: string
   clientId: string
   refreshToken: string
+  clientSecret: string
 }
 
 export type PublishTarget = "default" | "trustedTesters"
@@ -22,7 +23,8 @@ export const errorMap = {
   clientId:
     "To get one: https://github.com/PlasmoHQ/chrome-webstore-api/blob/main/token.md",
   refreshToken:
-    "No refresh token provided. To get one: https://github.com/PlasmoHQ/chrome-webstore-api/blob/main/token.md"
+    "No refresh token provided. To get one: https://github.com/PlasmoHQ/chrome-webstore-api/blob/main/token.md",
+  clientSecret: "No client secret provided. To get one: https://github.com/PlasmoHQ/chrome-webstore-api/blob/main/token.md"
 }
 
 export const requiredFields = Object.keys(errorMap)
@@ -121,7 +123,8 @@ export class ChromeWebstoreAPI {
         json: {
           client_id: this.options.clientId,
           refresh_token: this.options.refreshToken,
-          grant_type: "refresh_token"
+          grant_type: "refresh_token",
+          client_secret: this.options.clientSecret
         }
       })
       .json<{
