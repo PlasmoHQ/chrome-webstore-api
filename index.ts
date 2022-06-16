@@ -8,7 +8,7 @@ export type Options = {
   extId: string
   clientId: string
   refreshToken: string
-  clientSecret:string
+  clientSecret: string
 }
 
 export type PublishTarget = "default" | "trustedTesters"
