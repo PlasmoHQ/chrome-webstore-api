@@ -47,6 +47,7 @@ import { ChromeWebstoreAPI } from "@plasmohq/chrome-webstore-api"
 const client = new ChromeWebstoreAPI({
   extId,
   clientId,
+  clientSecret,
   refreshToken
 })
 
