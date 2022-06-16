@@ -37,7 +37,7 @@ Feature includes:
 
 ## Usage
 
-To obtain `clientId` and `refreshToken`, see: [token guide](https://github.com/PlasmoHQ/chrome-webstore-api/blob/main/token.md)
+To obtain `clientId`, `clientSecret`, and `refreshToken`, see: [token guide](https://github.com/PlasmoHQ/chrome-webstore-api/blob/main/token.md)
 
 ### nodejs API
 

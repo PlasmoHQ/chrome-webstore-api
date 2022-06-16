@@ -1,4 +1,4 @@
-import { createReadStream, ReadStream } from "fs"
+import { ReadStream, createReadStream } from "fs"
 import got from "got"
 
 const baseAPIUrl = "https://www.googleapis.com"
@@ -7,8 +7,8 @@ const refreshTokenURI = `${baseAPIUrl}/oauth2/v4/token`
 export type Options = {
   extId: string
   clientId: string
-  refreshToken: string
   clientSecret: string
+  refreshToken: string
 }
 
 export type PublishTarget = "default" | "trustedTesters"
@@ -21,10 +21,11 @@ export const errorMap = {
   extId:
     "No extension ID provided, e.g. https://chrome.google.com/webstore/detail/EXT_ID",
   clientId:
-    "To get one: https://github.com/PlasmoHQ/chrome-webstore-api/blob/main/token.md",
+    "No client ID provided. To get one: https://github.com/PlasmoHQ/chrome-webstore-api/blob/main/token.md",
+  clientSecret:
+    "No client secret provided. To get one: https://github.com/PlasmoHQ/chrome-webstore-api/blob/main/token.md",
   refreshToken:
-    "No refresh token provided. To get one: https://github.com/PlasmoHQ/chrome-webstore-api/blob/main/token.md",
-  clientSecret: "No client secret provided. To get one: https://github.com/PlasmoHQ/chrome-webstore-api/blob/main/token.md"
+    "No refresh token provided. To get one: https://github.com/PlasmoHQ/chrome-webstore-api/blob/main/token.md"
 }
 
 export const requiredFields = Object.keys(errorMap)
