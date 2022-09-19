@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a aria-label="License" href="./license">
+  <a aria-label="License" href="./LICENSE">
     <img alt="See License" src="https://img.shields.io/npm/l/@plasmohq/chrome-webstore-api"/>
   </a>
   <a aria-label="NPM" href="https://www.npmjs.com/package/@plasmohq/chrome-webstore-api">
@@ -50,7 +50,6 @@ const client = new ChromeWebstoreAPI({
   clientSecret,
   refreshToken
 })
-
 
 await client.submit({
   filePath: zip,
