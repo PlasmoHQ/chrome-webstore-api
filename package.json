@@ -13,10 +13,9 @@
   },
   "scripts": {
     "dev": "tsup index.ts --format esm --watch --sourcemap inline",
-    "build": "tsup index.ts --format esm --dts-resolve",
+    "build": "tsup index.ts --format esm --dts-resolve --minify --clean",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rimraf dist",
-    "prepublishOnly": "run-s clean build"
+    "prepublishOnly": "run-s build"
   },
   "author": "Plasmo Corp. <foss@plasmo.com>",
   "repository": {
@@ -35,7 +34,6 @@
     "@plasmohq/rps": "1.5.2",
     "@types/node": "18.7.23",
     "prettier": "2.7.1",
-    "rimraf": "3.0.2",
     "tsup": "6.2.3",
     "typescript": "4.8.3"
   },
