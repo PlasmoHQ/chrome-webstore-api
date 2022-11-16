@@ -38,6 +38,6 @@
     "typescript": "4.8.4"
   },
   "dependencies": {
-    "got": "12.5.2"
+    "got": "12.5.3"
   }
 }
