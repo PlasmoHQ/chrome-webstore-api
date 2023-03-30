@@ -12,10 +12,10 @@
     "esModuleInterop": true,
     "noImplicitAny": false,
     "moduleResolution": "node",
-    "isolatedModules": true,
     "module": "ES2022",
     "target": "ES2022",
-    "allowJs": true
+    "allowJs": true,
+    "verbatimModuleSyntax": true
   },
   "include": ["index.ts"]
 }
