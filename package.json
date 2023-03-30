@@ -1,6 +1,6 @@
 {
   "name": "@plasmohq/chrome-webstore-api",
-  "version": "2.7.1",
+  "version": "2.8.0",
   "description": "Chrome webstore API",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -30,14 +30,14 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@plasmohq/prettier-plugin-sort-imports": "3.6.1",
-    "@plasmohq/rps": "1.8.1",
-    "@types/node": "18.11.18",
-    "prettier": "2.8.3",
-    "tsup": "6.5.0",
-    "typescript": "4.9.4"
+    "@plasmohq/prettier-plugin-sort-imports": "3.6.3",
+    "@plasmohq/rps": "1.8.4",
+    "@types/node": "18.15.11",
+    "prettier": "2.8.7",
+    "tsup": "6.7.0",
+    "typescript": "5.0.2"
   },
   "dependencies": {
-    "got": "12.5.3"
+    "got": "12.6.0"
   }
 }

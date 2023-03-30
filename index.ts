@@ -9,6 +9,7 @@ export type Options = {
   clientId: string
   clientSecret: string
   refreshToken: string
+  uploadOnly?: boolean
 }
 
 export type PublishTarget = "default" | "trustedTesters"
@@ -69,6 +70,10 @@ export class ChromeWebstoreAPI {
       throw new Error(
         itemError.map(({ error_detail }) => error_detail).join("\n")
       )
+    }
+
+    if (this.options.uploadOnly) {
+      return
     }
 
     return this.publish(
