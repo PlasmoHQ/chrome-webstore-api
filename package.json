@@ -30,12 +30,12 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@plasmohq/prettier-plugin-sort-imports": "3.6.3",
-    "@plasmohq/rps": "1.8.4",
-    "@types/node": "18.15.11",
-    "prettier": "2.8.7",
+    "@plasmohq/prettier-plugin-sort-imports": "3.6.4",
+    "@plasmohq/rps": "1.8.5",
+    "@types/node": "20.2.3",
+    "prettier": "2.8.8",
     "tsup": "6.7.0",
-    "typescript": "5.0.2"
+    "typescript": "5.0.4"
   },
   "dependencies": {
     "got": "12.6.0"
