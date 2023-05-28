@@ -1,21 +1,8 @@
 {
+  "extends": "@plasmo/config/ts/utils.json",
   "compilerOptions": {
     "outDir": "dist",
-    "baseUrl": ".",
-    "resolveJsonModule": true,
-    "sourceMap": true,
-    "strict": false,
-    "declaration": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "esModuleInterop": true,
-    "noImplicitAny": false,
-    "moduleResolution": "node16",
-    "module": "ES2022",
-    "target": "ES2022",
-    "allowJs": true,
-    "verbatimModuleSyntax": true
+    "baseUrl": "."
   },
   "include": ["index.ts"]
 }
