@@ -1,6 +1,6 @@
 {
   "name": "@plasmohq/chrome-webstore-api",
-  "version": "2.9.0",
+  "version": "2.9.1",
   "description": "Chrome webstore API",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
