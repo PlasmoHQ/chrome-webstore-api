@@ -41,7 +41,7 @@ export class ChromeWebstoreAPI {
       }
     }
 
-    this.options = options
+    this.options = { ...options }
   }
 
   get uploadEndpoint() {
