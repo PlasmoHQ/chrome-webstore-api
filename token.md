@@ -47,10 +47,12 @@ Here's how to get the 3 keys: `clientId`, `clientSecret` and `refreshToken`
 
 <img width="771" alt="Publish app" src="https://user-images.githubusercontent.com/27696701/114265946-2da2a280-9a26-11eb-9567-c4e00f572500.png">
 
-15. Open a console/terminal where you stored your `key.json` file. Run the following, replacing `pnpm dlx` with `npx` or `yarn dlx` as needed:
+15. Download the credentials and save it as `key.json`.
+
+16. Open a console/terminal where you stored your `key.json` file. Run the following, replacing `pnpm dlx` with `npx` or `yarn dlx` as needed:
 
     > pnpm dlx gcp-refresh-token
 
-16. The command will open an OAuth consent screen on the web. Follow its steps and warnings (this is your own personal app). Make sure the local `port` is correct.
+17. The command will open an OAuth consent screen on the web. Follow its steps and warnings (this is your own personal app). Make sure the local `port` is correct.
 
-17. Done. Now you should have ✅ `clientId`, ✅ `clientSecret` and ✅ `refreshToken` in `key.json`. You can use these for all your extensions, but don't share them!
+18. Done. Now you should have ✅ `clientId`, ✅ `clientSecret` and ✅ `refreshToken` in `key.json`. You can use these for all your extensions, but don't share them!
