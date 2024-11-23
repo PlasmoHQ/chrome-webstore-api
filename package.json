@@ -37,6 +37,6 @@
     "typescript": "5.6.3"
   },
   "dependencies": {
-    "got": "14.4.4"
+    "got": "14.4.5"
   }
 }
