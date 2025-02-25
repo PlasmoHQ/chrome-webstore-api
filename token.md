@@ -42,10 +42,11 @@ Here's how to get the 3 keys: `clientId`, `clientSecret` and `refreshToken`
 
     > <img width="567" alt="OAuth client created" src="https://user-images.githubusercontent.com/6723574/163025132-752a8ce7-388f-4b9c-aede-47e0c99a4847.png">
 
-13. Visit https://console.cloud.google.com/apis/credentials/consent
+13. Visit https://console.cloud.google.com/auth/audience
 14. Click **PUBLISH APP** and confirm
 
-<img width="771" alt="Publish app" src="https://user-images.githubusercontent.com/27696701/114265946-2da2a280-9a26-11eb-9567-c4e00f572500.png">
+<img width="711" alt="Publish App" src="https://github.com/user-attachments/assets/4ee08e1e-f892-4e3b-b70e-7bc87c7ff8a5" />
+
 
 15. Download the credentials and save it as `key.json`.
 
