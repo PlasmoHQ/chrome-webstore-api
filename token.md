@@ -45,7 +45,7 @@ Here's how to get the 3 keys: `clientId`, `clientSecret` and `refreshToken`
 13. Visit https://console.cloud.google.com/auth/audience
 14. Click **PUBLISH APP** and confirm
 
-    > <img width="711" alt="Publish App" src="https://github.com/user-attachments/assets/4ee08e1e-f892-4e3b-b70e-7bc87c7ff8a5" />
+<img width="711" alt="Publish App" src="https://github.com/user-attachments/assets/4ee08e1e-f892-4e3b-b70e-7bc87c7ff8a5" />
 
 
 15. Download the credentials and save it as `key.json`.
